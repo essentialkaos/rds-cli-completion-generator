@@ -11,6 +11,7 @@ import (
 	"fmt"
 	"os"
 	"sort"
+	"strconv"
 	"strings"
 
 	"github.com/essentialkaos/ek/v13/fmtc"
@@ -236,7 +237,7 @@ func formatArgumentsSlice(args []string) string {
 	var result []string
 
 	for _, a := range args {
-		result = append(result, fmt.Sprintf("{y}\"%s\"{!}", a))
+		result = append(result, fmt.Sprintf("{y}%s{!}", strconv.Quote(a)))
 	}
 
 	return strings.Join(result, ", ")
