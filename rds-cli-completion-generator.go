@@ -34,7 +34,7 @@ import (
 // Basic utility info
 const (
 	APP  = "rds-cli-completion-generator"
-	VER  = "0.0.1"
+	VER  = "0.0.2"
 	DESC = "Tool to generate completion for RDS CLI"
 )
 
@@ -220,10 +220,10 @@ func printCommandsCode(commands InfoSlice) {
 	fmtc.NewLine()
 	for _, c := range commands {
 		if len(c.Arguments) == 0 {
-			fmtc.Printfn(`  { {y}"%s"{!}, nil },`, c.Name)
+			fmtc.Printfn(`  { {y}"%s"{!}, {*}nil{!}, {*}false{!} },`, c.Name)
 		} else {
 			fmtc.Printfn(
-				"  { {y}\"%s\"{!}, {*}[]string{!}{"+formatArgumentsSlice(c.Arguments)+"} },",
+				"  { {y}\"%s\"{!}, {*}[]string{!}{"+formatArgumentsSlice(c.Arguments)+"}, {*}false{!} },",
 				c.Name,
 			)
 		}
