@@ -10,7 +10,7 @@
 
 <br/>
 
-`rds-cli-completion-generator` is a a tool to generate completion for RDS CLI.
+`rds-cli-completion-generator` is a a tool to generate completion for [RDS](https://kaos.sh/rds) CLI.
 
 ### Installation
 
