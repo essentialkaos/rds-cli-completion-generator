@@ -35,7 +35,7 @@ import (
 // Basic utility info
 const (
 	APP  = "rds-cli-completion-generator"
-	VER  = "0.0.2"
+	VER  = "0.0.3"
 	DESC = "Tool to generate completion for RDS CLI"
 )
 
@@ -223,24 +223,14 @@ func printCommandsCode(commands InfoSlice) {
 		if len(c.Arguments) == 0 {
 			fmtc.Printfn(`  { {y}"%s"{!}, {*}nil{!}, {*}false{!} },`, c.Name)
 		} else {
-			fmtc.Printfn(
-				"  { {y}\"%s\"{!}, {*}[]string{!}{"+formatArgumentsSlice(c.Arguments)+"}, {*}false{!} },",
-				c.Name,
-			)
+			args := strutil.JoinFunc(c.Arguments, ", ", func(s string) string {
+				return fmt.Sprintf("{y}%s{!}", strconv.Quote(s))
+			})
+
+			fmtc.Printfn("  { {y}\"%s\"{!}, {*}[]string{!}{"+args+"}, {*}false{!} },", c.Name)
 		}
 	}
 	fmtc.NewLine()
-}
-
-// formatArgumentsSlice formats slice with command arguments to use as part of code
-func formatArgumentsSlice(args []string) string {
-	var result []string
-
-	for _, a := range args {
-		result = append(result, fmt.Sprintf("{y}%s{!}", strconv.Quote(a)))
-	}
-
-	return strings.Join(result, ", ")
 }
 
 // ////////////////////////////////////////////////////////////////////////////////// //
