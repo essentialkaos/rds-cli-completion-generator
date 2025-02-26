@@ -16,7 +16,7 @@
 
 #### From source
 
-To build the `rds-cli-completion-generator` from scratch, make sure you have a working Go 1.22+ workspace (_[instructions](https://go.dev/doc/install)_), then:
+To build the `rds-cli-completion-generator` from scratch, make sure you have a working Go 1.23+ workspace (_[instructions](https://go.dev/doc/install)_), then:
 
 ```
 go install github.com/essentialkaos/rds-cli-completion-generator@latest
