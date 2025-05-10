@@ -10,7 +10,7 @@
 
 <br/>
 
-`rds-cli-completion-generator` is a a tool to generate completion for [RDS](https://kaos.sh/rds) CLI.
+`rds-cli-completion-generator` is a tool to generate completion for [RDS](https://kaos.sh/rds) CLI.
 
 ### Installation
 
@@ -80,10 +80,10 @@ rds-cli-completion-generator --generate-man | sudo gzip > /usr/share/man/man1/rd
 
 ### Contributing
 
-Before contributing to this project please read our [Contributing Guidelines](https://github.com/essentialkaos/contributing-guidelines#contributing-guidelines).
+Before contributing to this project please read our [Contributing Guidelines](https://github.com/essentialkaos/.github/blob/master/CONTRIBUTING.md).
 
 ### License
 
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-<p align="center"><a href="https://essentialkaos.com"><img src="https://gh.kaos.st/ekgh.svg"/></a></p>
+<p align="center"><a href="https://kaos.dev"><img src="https://raw.githubusercontent.com/essentialkaos/.github/refs/heads/master/images/ekgh.svg"/></a></p>
